@@ -220,7 +220,7 @@ class Courses extends React.Component {
         }
         return (
             <div className="main-content courses">
-                <div className="course-header group">
+                <div className="group">
                     <h2>Courses</h2>
                     <ul className="course-nav">
                         <li><a href='#/courses/html' className={classHtml}>HTML</a></li>
@@ -265,27 +265,30 @@ class App extends React.Component {
         switch (this.state.route) {
             case '/about':
                 Child = About;
-                classAbout = 'active'
+                classAbout = 'active';
                 break;
             case '/teachers':
                 Child = Teachers;
-                classTeachers = 'active'
+                classTeachers = 'active';
                 break;
             case '/courses':
                 Child = Courses;
-                classCourses = 'active'
+                classCourses = 'active';
                 break;
             case '/courses/html':
                 Child = Courses;
                 propsForRepos = 'html';
+                classCourses = 'active';
                 break;
             case '/courses/css':
                 Child = Courses;
                 propsForRepos = 'css';
+                classCourses = 'active';
                 break;
             case '/courses/javascript':
                 Child = Courses;
                 propsForRepos = 'javascript';
+                classCourses = 'active';
                 break;
             default:
                 Child = Home;
