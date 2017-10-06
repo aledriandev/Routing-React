@@ -259,24 +259,21 @@ class App extends React.Component {
     }
     render() {
         let Child;
-        let classActive1;
-        let classActive2;
-        let classActive3;
-        let classActive0;
+        let classAbout, classTeachers, classCourses, classHome;
 
         let propsForRepos = null;
         switch (this.state.route) {
             case '/about':
                 Child = About;
-                classActive1 = 'active'
+                classAbout = 'active'
                 break;
             case '/teachers':
                 Child = Teachers;
-                classActive2 = 'active'
+                classTeachers = 'active'
                 break;
             case '/courses':
                 Child = Courses;
-                classActive3 = 'active'
+                classCourses = 'active'
                 break;
             case '/courses/html':
                 Child = Courses;
@@ -292,7 +289,7 @@ class App extends React.Component {
                 break;
             default:
                 Child = Home;
-                classActive0 = 'active'
+                classHome = 'active'
         }
         return (
             <div data-reactroot className='container'>
@@ -304,16 +301,16 @@ class App extends React.Component {
                     <div>
                         <ul className='main-nav'>
                             <li>
-                                <a className={classActive0} href="#">Home</a>
+                                <a className={classHome} href="#">Home</a>
                             </li>
                             <li>
-                                <a className={classActive1} href="#/about">About</a>
+                                <a className={classAbout} href="#/about">About</a>
                             </li>
                             <li>
-                                <a className={classActive2} href="#/teachers">Teachers</a>
+                                <a className={classTeachers} href="#/teachers">Teachers</a>
                             </li>
                             <li>
-                                <a className={classActive3} href="#/courses">Courses</a>
+                                <a className={classCourses} href="#/courses">Courses</a>
                             </li>
                         </ul>
                     </div>

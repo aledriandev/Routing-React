@@ -44,11 +44,7 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
-/* FORM & BUTTON STYLES -------- */
-
-.home a,
-input,
-button {
+.home a {
   padding: .5em;
   font-size: .9em;
   margin-right: 10px;
@@ -57,18 +53,6 @@ button {
   border: solid 1px #ccc;
   outline: none;
 }
-button {
-  color: white;
-  background: #4188dc;
-  padding-left: 1em;
-  padding-right: 1em;
-  cursor: pointer;
-  border-color: rgba(0,0,0, .1);
-}
-
-/* ================================= 
-  LAYOUT & PAGE STYLES
-==================================== */
 
 .container {
   width: 95%;
@@ -97,8 +81,6 @@ header {
   margin-bottom: 1em;
 }
 
-/* IMAGES -------- */
-
 .course-img {
   width: 70px;
 }
@@ -109,8 +91,6 @@ header {
 .not-found {
   text-align: center;
 }
-
-/* MAIN NAV -------- */
 
 .main-nav a {
   font-size: .95em;
@@ -128,8 +108,6 @@ header {
   color: #fff;
   background: #3b80d1;
 }
-
-/* COURSE NAV -------- */
 
 .course-nav li {
   display: inline-block;
@@ -153,8 +131,6 @@ header {
   background: #39add1;
 }
 
-/* ICONS -------- */
-
 .icn-logo {
   background: #54606b;
   color: #fff;
@@ -164,14 +140,6 @@ header {
   line-height: 0;
   margin-top: 30px;
 }
-.icn-error {
-  font-size: 3.2em;
-  margin-bottom: .25em;
-}
-
-/* ================================= 
-  MEDIA QUERIES
-==================================== */
 
 @media (min-width: 0) and (max-width: 768px) { 
   body {
@@ -200,9 +168,7 @@ header {
      display: block;
      margin: 1.5em 0 3.2em;
    }
-   .home a,
-   input,
-   button {
+   .home a{
      display: block;
      width: 100%;
      margin-bottom: 1em;
@@ -235,7 +201,7 @@ header {
     clear: left;
     margin-left: 0;
   }
-  /* MAIN NAV -------- */
+
   .icn-logo {
     margin-right: auto;
     padding: 0 2em;
@@ -255,7 +221,6 @@ header {
   .main-nav a:hover {
     border-color: rgba(0,0,0, .1);
   }
-  /* COURSE NAV -------- */
   .course-nav {
     float: right;
   } 
