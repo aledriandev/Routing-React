@@ -31,13 +31,55 @@ class About extends React.Component {
 }
 
 class Teachers extends React.Component {
+    constructor (props) {
+        super(props);
+        this.teachers = [
+            {
+                name: 'Angie McAngular',
+                text: 'Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!',
+                src: 'img/angie.png'
+            },
+            {
+                name: 'NodeStradamus',
+                text: "'NodeStra' is a software engineer and philosopher trying to leave the world better than he found it. He codes for non-profits, eCommerce, and large-scale web apps.",
+                src: 'img/nodestradamus.png'
+            },
+            {
+                name: "Geo 'Lo' Cation",
+                text: "Geo is a JavaScript developer working on large-scale applications. He's also a teacher who strives to support students in removing all barriers to learning code.",
+                src: 'img/geo.png'
+            },            
+            {
+                name: "Ecma Scriptnstuff",
+                text: "Ecma found her passion for computers and programming over 15 years ago. She is excited to introduce people to the wonderful world of JavaScript.",
+                src: 'img/ecma.png'
+            },
+            {
+                name: "Jay Query",
+                text: "Jay is a developer, author of CSS: The Missing Manual, JavaScript & jQuery: The Missing Manual, and web development teacher.",
+                src: 'img/jay.png'
+            },
+            {
+                name: "Json Babel",
+                text: "All of his professional life, Json has worked with computers online; he is a polyglot programmer and likes using the right tools for the job.",
+                src: 'img/json.png'
+            },
+        ]
+    };
     render() {
+        const teachers = this.teachers.map((teacher,index)=>{
+            return (
+                <li className='teacher' key={index}>
+                    <img className='teacher-img' src={teacher.src} alt=""/>
+                    <h3>{teacher.name}</h3>
+                    <p>{teacher.text}</p>
+                </li>
+            );
+        });
         return (
             <div className="main-content">
                 <h2>Teachers</h2>
-                <p>The front end course directory lists many of the courses we teach on HTML, CSS, JavaScript and more! Be sure to
-					visit the Teachers section to view a list of our talented teachers. Or visit the Courses section and select a
-					topic -- HTML, CSS, or JavaScript -- to see a list of our courses.</p>
+                <ul className='group'>{teachers}</ul>
             </div>
         );
     }
