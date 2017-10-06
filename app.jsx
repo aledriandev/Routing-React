@@ -94,55 +94,56 @@ class App extends React.Component {
         this.state = {
             route: window.location.hash.substr(1),
         };
-        // this.class = 'active'
     }
-    //  $(document).ready ()
     componentDidMount() {
         window.addEventListener('hashchange', () => {
-            //<a href="#/about">About</a>
-            //<li><a href='#/repos/html'>HTML</a></li>
             console.log(window.location.hash.substr(1));
 
             this.setState({
                 route: window.location.hash.substr(1),
             });
-            // this.class = ''
         });
     }
     render() {
         let Child;
+        let classActive1;
+        let classActive2;
+        let classActive3;
+        let classActive0;
+        let classActive5;
+
         let propsForRepos = null;
-        let activity = null;
         switch (this.state.route) {
             case '/about':
                 Child = About;
-                activity  = 'active';
+                classActive1 = 'active'
                 break;
             case '/teachers':
                 Child = Teachers;
-                activity  = 'active';
+                classActive2 = 'active'
                 break;
             case '/courses':
                 Child = Courses;
-                activity  = 'active';
+                classActive3 = 'active'
                 break;
             case '/courses/html':
                 Child = Courses;
                 propsForRepos = 'html';
-                activity  = 'active';
+                classActive = 'active'
                 break;
             case '/courses/css':
                 Child = Courses;
                 propsForRepos = 'css';
-                activity  = 'active';
+                classActive = 'active'
                 break;
             case '/courses/javascript':
                 Child = Courses;
                 propsForRepos = 'javascript';
-                activity  = 'active';
+                classActive = 'active'
                 break;
             default:
                 Child = Home;
+                classActive0 = 'active'
         }
         return (
             <div data-reactroot className='container'>
@@ -154,22 +155,16 @@ class App extends React.Component {
                     <div>
                         <ul className='main-nav'>
                             <li>
-                                { 
-                                    activity ? 
-                                        <a href="#">Home</a> 
-                                        :
-                                        <a className='active' href="#">Home</a>
-                                }
-                                
+                                <a className={classActive0} href="#">Home</a>
                             </li>
                             <li>
-                                <a href="#/about">About</a>
+                                <a className={classActive1} href="#/about">About</a>
                             </li>
                             <li>
-                                <a href="#/teachers">Teachers</a>
+                                <a className={classActive2} href="#/teachers">Teachers</a>
                             </li>
                             <li>
-                                <a href="#/courses">Courses</a>
+                                <a className={classActive3} href="#/courses">Courses</a>
                             </li>
                         </ul>
                     </div>
