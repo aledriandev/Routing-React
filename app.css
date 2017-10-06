@@ -99,9 +99,6 @@ header {
   text-transform: uppercase;
   display: block;
   padding: 1em;
-  -webkit-transition: .2s;
-  -o-transition: .2s;
-  transition: .2s;
 }
 .main-nav a:hover,
 .main-nav .active {
@@ -121,9 +118,6 @@ header {
   padding: .2em .8em;
   border-radius: .25em;
   background: #eaebeb;
-  -webkit-transition: .2s;
-  -o-transition: .2s;
-  transition: .2s;
 }
 .course-nav a:hover,
 .course-nav a.active {
