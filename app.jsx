@@ -30,6 +30,19 @@ class About extends React.Component {
     }
 }
 
+class Teachers extends React.Component {
+    render() {
+        return (
+            <div className="main-content">
+                <h2>Teachers</h2>
+                <p>The front end course directory lists many of the courses we teach on HTML, CSS, JavaScript and more! Be sure to
+					visit the Teachers section to view a list of our talented teachers. Or visit the Courses section and select a
+					topic -- HTML, CSS, or JavaScript -- to see a list of our courses.</p>
+            </div>
+        );
+    }
+}
+
 class Courses extends React.Component {
     render() {
         const { route } = this.props;
@@ -57,11 +70,13 @@ class Courses extends React.Component {
                 <div className="course-header group">
                     <h2>Courses</h2>
                     <ul className="course-nav">
-                        <li><a href='#/repos/html'>HTML</a></li>
-                        <li><a href='#/repos/css'>CSS</a></li>
-                        <li><a href='#/repos/javascript'>JavaScript</a></li>
+                        <li><a href='#/courses/html' className='active'>HTML</a></li>
+                        <li><a href='#/courses/css'>CSS</a></li>
+                        <li><a href='#/courses/javascript'>JavaScript</a></li>
                     </ul>
 
+                </div>
+                <div>
                     <ul>
                         {CurrentList}
                     </ul>
@@ -77,8 +92,9 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            route: window.location.hash.substr(1)
+            route: window.location.hash.substr(1),
         };
+        // this.class = 'active'
     }
     //  $(document).ready ()
     componentDidMount() {
@@ -88,31 +104,42 @@ class App extends React.Component {
             console.log(window.location.hash.substr(1));
 
             this.setState({
-                route: window.location.hash.substr(1)
+                route: window.location.hash.substr(1),
             });
+            // this.class = ''
         });
     }
     render() {
         let Child;
         let propsForRepos = null;
+        let activity = null;
         switch (this.state.route) {
             case '/about':
                 Child = About;
+                activity  = 'active';
                 break;
-            case '/repos':
+            case '/teachers':
+                Child = Teachers;
+                activity  = 'active';
+                break;
+            case '/courses':
                 Child = Courses;
+                activity  = 'active';
                 break;
-            case '/repos/html':
+            case '/courses/html':
                 Child = Courses;
                 propsForRepos = 'html';
+                activity  = 'active';
                 break;
-            case '/repos/css':
+            case '/courses/css':
                 Child = Courses;
                 propsForRepos = 'css';
+                activity  = 'active';
                 break;
-            case '/repos/javascript':
+            case '/courses/javascript':
                 Child = Courses;
                 propsForRepos = 'javascript';
+                activity  = 'active';
                 break;
             default:
                 Child = Home;
@@ -127,13 +154,22 @@ class App extends React.Component {
                     <div>
                         <ul className='main-nav'>
                             <li>
-                                <a className='active' href="#">Home</a>
+                                { 
+                                    activity ? 
+                                        <a href="#">Home</a> 
+                                        :
+                                        <a className='active' href="#">Home</a>
+                                }
+                                
                             </li>
                             <li>
                                 <a href="#/about">About</a>
                             </li>
                             <li>
-                                <a href="#/repos">Repos</a>
+                                <a href="#/teachers">Teachers</a>
+                            </li>
+                            <li>
+                                <a href="#/courses">Courses</a>
                             </li>
                         </ul>
                     </div>
