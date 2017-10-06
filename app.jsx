@@ -47,22 +47,26 @@ class Courses extends React.Component {
     render() {
         const { route } = this.props;
         let CurrentList = null;
+        let class1, class2, class0
         switch (route) {
 
             case 'css':
                 CurrentList = ['How to Make a CSS', 'HTML CSS'].map((item, index) => {
                     return <li key={index}> {item} </li>
                 });
+                class1 = 'active';
                 break;
             case 'javascript':
                 CurrentList = ['How to Make a JS', 'HTML JS'].map((item, index) => {
                     return <li key={index}> {item} </li>
                 });
+                class2 = 'active';
                 break;
             default: //'html'
                 CurrentList = ['How to Make a Website', 'HTML Forms'].map((item, index) => {
                     return <li key={index}> {item} </li>
                 });
+                class0 = 'active';
                 break;
         }
         return (
@@ -70,9 +74,9 @@ class Courses extends React.Component {
                 <div className="course-header group">
                     <h2>Courses</h2>
                     <ul className="course-nav">
-                        <li><a href='#/courses/html' className='active'>HTML</a></li>
-                        <li><a href='#/courses/css'>CSS</a></li>
-                        <li><a href='#/courses/javascript'>JavaScript</a></li>
+                        <li><a href='#/courses/html' className={class0}>HTML</a></li>
+                        <li><a href='#/courses/css' className={class1}>CSS</a></li>
+                        <li><a href='#/courses/javascript' className={class2}>JavaScript</a></li>
                     </ul>
 
                 </div>
@@ -110,7 +114,6 @@ class App extends React.Component {
         let classActive2;
         let classActive3;
         let classActive0;
-        let classActive5;
 
         let propsForRepos = null;
         switch (this.state.route) {
@@ -129,17 +132,14 @@ class App extends React.Component {
             case '/courses/html':
                 Child = Courses;
                 propsForRepos = 'html';
-                classActive = 'active'
                 break;
             case '/courses/css':
                 Child = Courses;
                 propsForRepos = 'css';
-                classActive = 'active'
                 break;
             case '/courses/javascript':
                 Child = Courses;
                 propsForRepos = 'javascript';
-                classActive = 'active'
                 break;
             default:
                 Child = Home;
